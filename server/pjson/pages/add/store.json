@@ -1,0 +1,74 @@
+[
+    {
+        "type": "add"
+    },
+    {
+        "type": "template",
+        "template": "addStore_template",
+        "children": [
+            {
+                "type": "adapter",
+                "id": "addStoreAdapter",
+                "children": [
+                    {
+                        "id": "name",
+                        "label": "NAME",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "id": "location",
+                        "label": "LOCATION",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "id": "phone",
+                        "label": "PHONE NUMBER",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "id": "manager",
+                        "label": "MANAGER",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "type": "action",
+                        "actionType": "ajax",
+                        "text": "SUBMIT",
+                        "options": {
+                            "target": {
+                                "uri": "add/store",
+                                "options": {
+                                    "type": "POST"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

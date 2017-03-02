@@ -1,0 +1,87 @@
+[
+    {
+        "type": "inventory"
+    },
+    {
+        "type": "template",
+        "template": "inventory_template",
+        "children": [
+            {
+                "type": "adapter",
+                "id": "inventoryAdapter",
+                "dataSourceEndpoint": {
+                    "target": {
+                        "uri": "inventory/{{id}}"
+                    },
+                    "keyMap": {
+                        "dataKey": "inventory"
+                    }
+                },
+                "children": [
+                    {
+                        "type": "setValue"
+                    },
+                    {
+                        "type": "listAdvanced",
+                        "id": "inventory",
+                        "list": {
+                            "type": "list",
+                            "label": "Inventory",
+                            "addButtonRendered": false,
+                            "options": {
+                                "subscribeToData": true
+                            },
+                            "items": [
+                                {
+                                    "id": "id",
+                                    "label": "ID",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "name",
+                                    "label": "NAME",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "category",
+                                    "label": "CATEGORY",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "unitPrice",
+                                    "label": "PRICE",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "quantity",
+                                    "label": "QUANTITY",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

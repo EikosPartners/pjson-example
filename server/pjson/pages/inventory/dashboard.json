@@ -1,0 +1,135 @@
+[
+    {
+        "type": "dashboard"
+    },
+    {
+        "type": "template",
+        "template": "dashboard_template",
+        "children": [
+            {
+                "type": "adapter",
+                "id": "dashboardAdapter",
+                "dataSourceEndpoint": {
+                    "target": {
+                        "uri": "stores"
+                    },
+                    "keyMap": {
+                        "dataKey": "stores"
+                    }
+                },
+                "children": [
+                    {
+                        "type": "action",
+                        "actionType": "route",
+                        "text": "Add New Store",
+                        "classes": "add-store",
+                        "options": {
+                            "target": "add-store"
+                        }
+                    },
+                    {
+                        "type": "listAdvanced",
+                        "id": "stores",
+                        "list": {
+                            "type": "list",
+                            "label": "Stores",
+                            "classes": "list-advanced",
+                            "addButtonRendered": false,
+                            "options": {
+                                "subscribeToData": true
+                            },
+                            "items": [
+                                {
+                                    "id": "_id",
+                                    "label": "ID",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "name",
+                                    "label": "NAME",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "location",
+                                    "label": "Location",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "phone",
+                                    "label": "Phone Number",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "id": "manager",
+                                    "label": "Manager",
+                                    "type": "input",
+                                    "inputType": "text",
+                                    "options": {
+                                        "readonly": true
+                                    }
+                                },
+                                {
+                                    "type": "action",
+                                    "actionType": "route",
+                                    "text": "Inventory",
+                                    "classes": "center",
+                                    "options": {
+                                        "target": "inventory",
+                                        "params": {
+                                            "id": "{{_id}}"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "action",
+                                    "actionType": "route",
+                                    "text": "Edit",
+                                    "classes": "center",
+                                    "options": {
+                                        "target": "edit-store",
+                                        "params": {
+                                            "id": "{{_id}}"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "action",
+                                    "actionType": "ajax",
+                                    "text": "DELETE",
+                                    "classes": "center delete",
+                                    "options": {
+                                        "target": {
+                                            "uri": "delete/store",
+                                            "options": {
+                                                "type": "DELETE"
+                                            }
+                                        },
+                                        "params": {
+                                            "id": "{{_id}}"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "type": "dashboard"
+    },
+    {
+        "id": "itemGrid",
+        "type": "gridAdvanced",
+        "filters": {
+            "searchPlaceholderText": "Filter by item name",
+            "advanced": {
+
+            }
+        },
+        "grid": {
+            "type": "grid",
+            "id": "inventoryGrid",
+            "options": {
+                "queryOnLoad": true,
+                "loadNodeData": true,
+                "infinite": true,
+                "noDataMessage": "Inventory is empty",
+                "fixedHeader": {
+                    "headerOffset": 0
+                }
+            },
+            "keyMap": {
+                "dataKey": "items"
+            },
+            "dataSourceEndpoint": {
+                "type": "action",
+                "actionType": "ajax",
+                "options": {
+                    "target": {
+                        "uri": "items"
+                    }
+                }
+            }
+        },
+        "columns": [
+            {
+                "name": "name",
+                "title": "Name"
+            },
+            {
+                "name": "category",
+                "title": "Category"
+            }
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "type": "globalNavigation",
+        "routes": [
+            {
+                "text": "Home",
+                "route": "dashboard/{options*}",
+                "get": "ui/inventory/dashboard"
+            },
+            {
+                "text": "Admin",
+                "route": "admin/{options*}",
+                "get": "ui/admin/admin"
+            },
+            {
+                "route": "inventory/{options*}",
+                "get": "ui/inventory/inventory",
+                "inNav": false
+            },
+            {
+                "route": "add-store/{options*}",
+                "get": "ui/add/store",
+                "inNav": false
+            },
+            {
+                "route": "edit-store/{options*}",
+                "get": "ui/edit/store",
+                "inNav": false
+            }
+        ]
+    }
+]

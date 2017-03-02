@@ -1,0 +1,82 @@
+[
+    {
+        "type": "edit"
+    },
+    {
+        "type": "template",
+        "template": "editStore_template",
+        "children": [
+            {
+                "type": "adapter",
+                "id": "editStoreAdapter",
+                "dataSourceEndpoint": {
+                    "target": {
+                        "uri": "stores/{{id}}"
+                    }
+                },
+                "children": [
+                    {
+                        "type": "setValue"
+                    },
+                    {
+                        "id": "name",
+                        "label": "NAME",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "id": "location",
+                        "label": "LOCATION",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "id": "phone",
+                        "label": "PHONE NUMBER",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "id": "manager",
+                        "label": "MANAGER",
+                        "type": "input",
+                        "inputType": "text",
+                        "options": {
+                            "validations": {
+                                "required": true
+                            }
+                        }
+                    },
+                    {
+                        "type": "action",
+                        "actionType": "ajax",
+                        "text": "SUBMIT",
+                        "options": {
+                            "target": {
+                                "uri": "edit/store",
+                                "options": {
+                                    "type": "PUT"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
