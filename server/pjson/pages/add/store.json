@@ -64,7 +64,16 @@
                                 "options": {
                                     "type": "POST"
                                 }
-                            }
+                            },
+                            "nextActions": [
+                                {
+                                    "type": "action",
+                                    "actionType": "route",
+                                    "options": {
+                                        "target": "dashboard"
+                                    }
+                                }
+                            ]
                         }
                     }
                 ]
