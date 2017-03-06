@@ -81,6 +81,24 @@ pjsonLoader.load(app, {
             if (data[0].type === 'dashboard') {
                 data[1].children[0].children.splice(0, 1);
             }
+
+            // Filter out the admin module.
+            if (data[0].type === 'globalNavigation') {
+                let idx;
+                
+                data[0].routes.some( (route, index) => {
+                    if (route.route === 'admin/{options*}') {
+                        idx = index;
+                        return true;
+                    }
+                });
+
+                console.log(idx);
+
+                if (idx) {
+                    data[0].routes.splice(idx, 1);
+                }
+            }
         }
 
         return data;
